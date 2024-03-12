@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return "Homepage";
+        return "Meow page d'accueil";
     }
 }

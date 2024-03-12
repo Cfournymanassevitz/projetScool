@@ -15,7 +15,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MeowController;
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/meows', [MeowController::class, 'index']);
+Route::get('/meows', [MeowController::class, 'index'])
+->name('meows.index');
 Route::get('/meows/{id}', [MeowController::class, 'show']);
+
 
 
