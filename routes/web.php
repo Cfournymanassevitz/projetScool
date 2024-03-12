@@ -12,12 +12,12 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-use App\Http\Controllers\MeowController;
+use App\Http\Controllers\MeowsController;
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/meows', [MeowController::class, 'index'])
+Route::get('/meows', [MeowsController::class, 'index'])
 ->name('meows.index');
-Route::get('/meows/{id}', [MeowController::class, 'show']);
+Route::get('/meows/{id}', [MeowsController::class, 'show']);
 
 
 

@@ -1,9 +1,9 @@
 <x-layout>
-    <x-slot:title>Liste des restaurants</x-slot:title>
+    <x-slot:title>Liste miaou</x-slot:title>
 {{--    Ces balises permettent à Blade de les interpréter comme des composants.--}}
-    <h2>Liste des restaurants</h2>
+    <h2>Liste des miaou</h2>
     <div style="margin-bottom: 1rem">
-        <a href="{{ route('restaurants.create') }}">Créer un restaurant</a>
+        <a href="{{ route('meows.create') }}">Créer un restaurant</a>
     </div>
     <table>
         <thead>
@@ -14,13 +14,13 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($chats as $chat)
+        @foreach($meows as $meow)
             <tr>
                 <td>
-                    <a href="{{ route('meow.show', $chat) }}">{{ $chat->name }}</a>
+                    <a href="{{ route('meow.show', $meow) }}">{{ $meow->name }}</a>
                 </td>
-                <td>{{ $chat->type }}</td>
-                <td>{{ $chat->user->name }}</td>
+                <td>{{ $meow->type }}</td>
+                <td>{{ $meow->user->name }}</td>
             </tr>
         @endforeach
         </tbody>
