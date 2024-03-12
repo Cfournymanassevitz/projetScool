@@ -13,4 +13,11 @@ class Meows extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function definition()
+    {
+        return [
+            'content' => $this->faker->sentence
+        ];
+    }
 }
