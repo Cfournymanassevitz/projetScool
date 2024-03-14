@@ -30,19 +30,19 @@
     <table>
         <thead>
         <tr>
-            <th>Nom</th>
-            <th>Type</th>
-            <th>Entretiens</th>
+            <th>ID</th>
+            <th>User ID </th>
+            <th>Messages</th>
         </tr>
         </thead>
         <tbody>
         @foreach($meows as $meow)
             <tr>
                 <td>
-                    <a >{{ $meow->name }}</a>
+                    <a >{{ $meow->id }}</a>
                 </td>
-                <td>{{ $meow->type }}</td>
-                <td>{{ $meow->user->name }}</td>
+                <td>{{ $meow->user_id }}</td>
+                <td>{{ $meow->messages }}</td>
             </tr>
         @endforeach
         </tbody>
