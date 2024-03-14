@@ -12,6 +12,6 @@ class MessageSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Meows::factory(10)->create();
     }
 }

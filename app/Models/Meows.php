@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Meows extends Model
 {
     use HasFactory;
-    protected $fillable = ['content'];
+    protected $fillable = ['messages'];
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -17,7 +17,7 @@ class Meows extends Model
     public function definition()
     {
         return [
-            'content' => $this->faker->sentence
+            'messages' => $this->faker->sentence
         ];
     }
 }

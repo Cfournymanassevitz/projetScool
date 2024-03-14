@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
+
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Meows>
  */
-class MessageFactory extends Factory
+class MeowsFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,6 +19,8 @@ class MessageFactory extends Factory
     public function definition(): array
     {
         return [
+            'messages' => fake()->text(),
+            'user_id' => fake()->randomElement(User::pluck('id')),
 
         ];
     }
