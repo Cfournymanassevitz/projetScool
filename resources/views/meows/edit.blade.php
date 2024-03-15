@@ -41,25 +41,26 @@
     <thead>
     <tr>
         <th>ID</th>
-        <th>User ID</th>
-        <th>messages</th>
+        <th>message</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>
-            <a>{{ $meow->id }}</a>
-        </td>
-        <td>
-            <a>{{ $user->id }}</a>
-        </td>
-        <td>{{ $meow->messages }}</td>
-        <td><a href="{{ route('meows.edit', ['id' => $meow->id])     }}">Editer</a> </td>
-        <td>
-            <a href="{{ route('meows.delete', ['id' => $meow->id]) }}" >Supprimer</a>
-        </td>
-    </tr>
+
+    <form action="{{route("meows.update", ['id' => $meow->id])}}" method="post" class="test">
+        @CSRF
+        <fieldset>
+            <legend>CONTACTEZ NOUS</legend>
+        </fieldset>
+        <div class="msg">
+            <label for="content">Message : </label>
+            <textarea id="content" name="content" cols="30" rows="10">{{ $meow->messages }}</textarea>
+        </div>
+        <div class="btn">
+            <button type="submit"> Envoyer le message </button>
+        </div>
+    </form>
     </tbody>
+
 </table>
 
 

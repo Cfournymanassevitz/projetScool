@@ -6,6 +6,7 @@ use App\Models\Meows;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class MeowsController extends Controller
 {
     public function index()
@@ -38,23 +39,25 @@ class MeowsController extends Controller
 //    }
     public function edit($id)
     {
-        $meows = Meows::find($id);
-        return view('meows.show', [
-            'meows' => $meows
+        $meow = Meows::find($id);
+        return view('meows.edit', [
+            'meow' => $meow
         ]);
     }
+
     public function update(Request $request, $id)
     {
-        $meows = Meows::find($id);
-        $meows->content = $request->input('content');
-        $meows->user_id = $request->input('user_id');
-        $meows->save();
-        return redirect()->route('meows.show', $meows->id);
+        $meow = Meows::find($id);
+        $meow->messages = $request->input('content');
+        $meow->save();
+
+        return redirect()->route('meows.show', $meow->id);
     }
-    public function destroy($id)
+    public function delete($id)
     {
-        $meows = Meows::find($id);
-        $meows->delete();
+        $meow = Meows::find($id);
+        $meow->delete();
+
         return redirect()->route('meows.index');
     }
 
